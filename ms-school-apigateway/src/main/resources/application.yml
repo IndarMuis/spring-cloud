@@ -1,0 +1,64 @@
+server:
+  port: 9080
+spring:
+  application:
+    name: "api-gateway"
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 20000
+        response-timeout: 7s
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: 'user-service'
+#          uri: http://localhost:8081
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/api/v1/user/** , /user-service/v3/api-docs
+        - id: 'study-service'
+#          uri: http://localhost:8082
+          uri: lb://STUDY-SERVICE
+          predicates:
+            - Path=/api/v1/study/** , /study-service/v3/api-docs
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://localhost:9081/eureka/
+    eureka-server-read-timeout-seconds: 100
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+springdoc:
+  enable-native-support: true
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    config-url: /v3/api-docs/swagger-config
+    urls:
+      - url: /v3/api-docs
+        name: API Gateway Service
+#        primaryName: API Gateway Service
+      - url: /user-service/v3/api-docs
+        name: User Service
+#        primaryName: Category Service
+      - url: /study-service/v3/api-docs
+        name: Study Service
+#        primaryName: Product Service

@@ -1,0 +1,55 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: "user-service"
+  datasource:
+    url: jdbc:mysql://localhost:3306/userdb
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+  sql:
+    init:
+      mode: always
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://localhost:9081/eureka/
+    eureka-server-read-timeout-seconds: 100
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+endpoints:
+  shutdown:
+    enabled: true
+
+openapi:
+  service:
+    title: user-service-doc
+    version: 1.0.0
+    url: http://localhost:9080 # api gateway host
+
+springdoc:
+  api-docs:
+    path: /user-service/v3/api-docs
+  swagger-ui:
+    path: /user-service/swagger-ui.html

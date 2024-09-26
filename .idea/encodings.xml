@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ms-school-apigateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-school-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-school-eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-school-study/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-school-user/src/main/java" charset="UTF-8" />
+  </component>
+</project>
