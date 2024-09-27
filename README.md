@@ -71,11 +71,11 @@
       - **Endpoint**: `DELETE /api/users/{id}`
 
 ## Access resources
-Base URL : http://localhost:9080
-ms-school-user : http://localhost:9080/api/v1/user
-ms-school-study : http://localhost:9080/api/v1/study
+##### Base URL : http://localhost:9080
+##### ms-school-user : http://localhost:9080/api/v1/user
+##### ms-school-study : http://localhost:9080/api/v1/study
 
 ## Access swagger docs via API Gateway
-Base URL : http://localhost:9080/swagger-ui.html
+##### Base URL : http://localhost:9080/swagger-ui.html
 
     
