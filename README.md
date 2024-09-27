@@ -14,24 +14,61 @@
 
 ## Sample Request
 1. ms-school-user
-    - USER
-      - Create user : POST /api/users
-          ```json
-         {
-           "username": "johndoe",
-           "email": "john.doe@example.com",
-           "password": "P@ssw0rd"
-         }
-          ```
-      - Update User : PUT /api/users/{id}
-          ```json
-         {
-            "username": "johnupdated",
-            "email": "john.updated@example.com",
-            "password": "NewP@ssw0rd"
-         }
-          ```
-    - ROLE
+      ### **Role Service Request:**
+      
+      #### 1. **Create Role**
+      - **Endpoint**: `POST /api/roles`
+        - **Request Body**:
+      ```json
+      {
+        "roleName": "ADMIN"
+      }
+      ```
+      
+      #### 2. **Update Role**
+      - **Endpoint**: `PUT /api/roles/{id}`
+        - **Request Body**:
+      ```json
+      {
+        "roleName": "USER"
+      }
+      ```
+      
+      #### 3. **Get Role by ID**
+      - **Endpoint**: `GET /api/roles/{id}`
+      
+      #### 4. **Delete Role**
+      - **Endpoint**: `DELETE /api/roles/{id}`
+      
+      ### **User Service Request:**
+      
+      #### 1. **Create User**
+      - **Endpoint**: `POST /api/users`
+        - **Request Body**:
+      ```json
+      {
+        "username": "johndoe",
+        "email": "john.doe@example.com",
+        "password": "P@ssw0rd"
+      }
+      ```
+      
+      #### 2. **Update User**
+      - **Endpoint**: `PUT /api/users/{id}`
+        - **Request Body**:
+      ```json
+      {
+        "username": "johnupdated",
+        "email": "john.updated@example.com",
+        "password": "NewP@ssw0rd"
+      }
+      ```
+   
+      #### 3. **Get User by ID**
+      - **Endpoint**: `GET /api/users/{id}`
+      
+      #### 4. **Delete User**
+      - **Endpoint**: `DELETE /api/users/{id}`
 
 ## Access resources
 Base URL : http://localhost:9080
